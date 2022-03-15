@@ -262,7 +262,7 @@ header component
   flex-direction: column;
 }
 .contact__about > *:not(:first-child) {
-  margin-bottom: 1.8rem;
+  margin-bottom: 3.5rem;
 }
 .contact__about img {
   width: 85px;
@@ -271,6 +271,7 @@ header component
   display: flex;
   list-style: none;
   width: 100%;
+  max-width: 325px;
   justify-content: space-between;
 }
 .contact__about .icon-list li {
