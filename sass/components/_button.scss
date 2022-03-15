@@ -1,0 +1,36 @@
+/*****button****/
+
+.button-group {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  min-width: 27.5rem;
+  height: 7rem;
+  display: inline-block;
+  border-radius: 1.6rem;
+  text-align: center;
+  font-size: 3.2rem;
+  line-height: 6.6rem;
+
+  &__contained {
+    background-color: $primary;
+    color: $white;
+    border: 1px solid $primary;
+  }
+
+  &__outlined {
+    border: 2px solid $primary;
+    color: $primary;
+    background-color: transparent;
+  }
+  & > img {
+    width: 35px;
+    margin-right: 0.5rem;
+  }
+
+  &__border-radius-8 {
+    border-radius: 8px;
+  }
+}
