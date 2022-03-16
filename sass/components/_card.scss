@@ -1,6 +1,7 @@
 /*******service card******/
 .card {
   width: 100%;
+  background-color: #efefef;
   border: 1px solid $white;
   box-shadow: 1px 1px 5px #fff;
   text-align: center;
@@ -12,8 +13,8 @@
   }
 
   &__img {
-    width: 24rem;
-    height: 24rem;
+    width: 12rem;
+    height: 12rem;
     border-radius: 50%;
     background-color: $primary;
 
@@ -21,12 +22,21 @@
     justify-content: center;
     align-items: center;
 
+    @include respond(desk-xl) {
+      width: 24rem;
+      height: 24rem;
+    }
+
     margin: 0 auto;
 
     img {
-      width: 140px;
-      height: 140px;
+      width: 7rem;
+      height: 7rem;
       display: block;
+      @include respond(desk-xl) {
+        width: 14rem;
+        height: 14rem;
+      }
     }
   }
 }

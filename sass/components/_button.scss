@@ -3,31 +3,55 @@
 .button-group {
   display: flex;
   align-items: center;
+  justify-content: center;
+  @include respond(desk-xl) {
+    justify-content: flex-start;
+  }
 }
 
 .btn {
-  min-width: 27.5rem;
-  height: 7rem;
-  display: inline-block;
-  border-radius: 1.6rem;
+  min-width: 10rem;
+  border-radius: 0.8rem;
   text-align: center;
-  font-size: 3.2rem;
-  line-height: 6.6rem;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  color: $white;
+
+  @include respond(desk-xl) {
+    min-width: 27.5rem;
+    font-size: 2.4rem;
+    padding: 12px 20px;
+    border-radius: 1.6rem;
+  }
 
   &__contained {
-    background-color: $primary;
+    background-color: rgba($color: $primary, $alpha: 0.75);
     color: $white;
     border: 1px solid $primary;
+    transition: background-color 0.4s;
+    &:hover {
+      background-color: $primary;
+    }
   }
 
   &__outlined {
-    border: 2px solid $primary;
+    border: 1px solid $primary;
     color: $primary;
     background-color: transparent;
+    transition: background-color 0.4s;
+    opacity: 0.6;
+    transition: opacity 0.4s;
+    &:hover {
+      opacity: 1;
+    }
   }
   & > img {
-    width: 35px;
     margin-right: 0.5rem;
+    width: 14px;
+
+    @include respond(desk-xl) {
+      width: 35px;
+    }
   }
 
   &__border-radius-8 {

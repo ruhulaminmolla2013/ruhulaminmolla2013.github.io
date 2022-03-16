@@ -1,10 +1,10 @@
 @import "abstracts/abstracts";
+@import "abstracts/mixin";
 @import "base/base";
+@import "base/utilityclasses.scss";
 
 @import "components/header";
 @import "components/card";
 @import "components/button";
 
 @import "layout/home.scss";
-
-@import "base/utilityclasses.scss";
