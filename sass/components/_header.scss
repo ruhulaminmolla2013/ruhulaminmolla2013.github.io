@@ -5,6 +5,11 @@ header component
 .header {
   width: 100%;
   background-color: rgba($color: $secondary, $alpha: 1);
+  position: static;
+
+  @include respond(desk-xl) {
+    position: fixed;
+  }
 
   .menu-icon {
     width: 40px;
