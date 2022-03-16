@@ -41,6 +41,7 @@ a {
   width: 100%;
   margin: 0 auto;
   padding: 0 12px;
+  position: relative;
 }
 
 /*** text color **/
@@ -376,24 +377,99 @@ header component
 ***/
 .header {
   width: 100%;
-  background-color: rgba(168, 168, 168, 0.5);
-  padding: 0.5rem 0;
-  position: static;
+  background-color: #a8a8a8;
 }
-.header .wrapper {
-  display: flex;
-  flex-direction: column;
+.header .menu-icon {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 99;
+  transition: all 0.35s;
+}
+@media only screen and (min-width: 1900px) {
+  .header .menu-icon {
+    display: none;
+  }
+}
+.header .menu-icon__show {
+  visibility: visible;
+}
+.header .menu-icon__hide {
+  visibility: hidden;
+}
+.header .drawer {
+  margin: 0 -12px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  transition: all 0.35s;
+  background-color: #313131;
+}
+@media only screen and (min-width: 1900px) {
+  .header .drawer {
+    background-color: transparent;
+    flex-direction: row;
+    margin: 0;
+    left: 0;
+    position: relative;
+  }
+}
+.header .drawer__open {
+  margin-left: 0;
+}
+.header .drawer__close {
+  margin-left: -1920px;
+}
+@media only screen and (min-width: 1900px) {
+  .header .drawer__close {
+    margin-left: 0;
+  }
 }
 .header .logo-box {
   width: 100%;
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ffffff;
+  padding: 12px;
+}
+@media only screen and (min-width: 1900px) {
+  .header .logo-box {
+    width: auto;
+    padding: 12px;
+  }
 }
 .header .logo-box .site-logo {
-  width: 360px;
-  width: calc(100% - 24px);
+  display: block;
+  width: calc(100% - 24px - 30px - 12px);
+}
+.header .logo-box .close-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+@media only screen and (min-width: 1900px) {
+  .header .logo-box .close-icon {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1900px) {
+  .header .logo-box {
+    display: block;
+    border-bottom: none;
+  }
 }
 .header .nav {
   width: 100%;
+}
+@media only screen and (min-width: 1900px) {
+  .header .nav {
+    width: auto;
+    display: flex;
+  }
 }
 .header .nav__item {
   display: block;
@@ -405,30 +481,14 @@ header component
   flex-direction: column;
   border-bottom: 1px solid #ffffff;
 }
-.header .nav__item:hover {
-  color: #e9b928;
-}
 @media only screen and (min-width: 1900px) {
-  .header {
-    padding: 1.5rem 0;
-  }
-  .header .wrapper {
-    flex-direction: row;
-  }
-  .header .logo-box {
-    width: auto;
-    display: block;
-  }
-  .header .nav {
-    width: auto;
-  }
   .header .nav__item {
     width: auto;
-    border: none;
+    border-bottom: none;
   }
-  .header .nav__item:hover {
-    color: #e9b928;
-  }
+}
+.header .nav__item:hover {
+  color: #e9b928;
 }
 
 /*******service card******/
@@ -565,6 +625,7 @@ header component
   height: 100vh;
   max-height: 1080px;
   position: relative;
+  margin: 0 auto;
 }
 .hero__inner-box {
   width: 100%;
@@ -864,7 +925,8 @@ header component
 .contact__get-in-touch input {
   padding: 12px;
   font-size: 24px;
-  width: auto;
+  width: 100%;
+  max-width: 100%;
   background-color: transparent;
   border: 1px solid #606060;
   border-radius: 4px;
@@ -879,7 +941,8 @@ header component
   height: 115px;
   padding: 12px;
   font-size: 24px;
-  width: auto;
+  width: 100%;
+  max-width: 100%;
   background-color: transparent;
   border: 1px solid #606060;
   border-radius: 4px;

@@ -4,26 +4,94 @@ header component
 
 .header {
   width: 100%;
-  background-color: rgba($color: $secondary, $alpha: 0.5);
-  padding: 0.5rem 0;
-  position: static;
+  background-color: rgba($color: $secondary, $alpha: 1);
 
-  & .wrapper {
-    display: flex;
-    flex-direction: column;
+  .menu-icon {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 99;
+    transition: all 0.35s;
+
+    @include respond(desk-xl) {
+      display: none;
+    }
+
+    &__show {
+      visibility: visible;
+    }
+    &__hide {
+      visibility: hidden;
+    }
+  }
+
+  .drawer {
+    margin: 0 -12px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    transition: all 0.35s;
+    background-color: rgba($color: $dark, $alpha: 1);
+
+    @include respond(desk-xl) {
+      background-color: transparent;
+      flex-direction: row;
+      margin: 0;
+      left: 0;
+      position: relative;
+    }
+
+    &__open {
+      margin-left: 0;
+    }
+    &__close {
+      margin-left: -1920px;
+      @include respond(desk-xl) {
+        margin-left: 0;
+      }
+    }
   }
 
   .logo-box {
     width: 100%;
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $white;
+    padding: 12px;
+    @include respond(desk-xl) {
+      width: auto;
+      padding: 12px;
+    }
     .site-logo {
-      width: 360px;
-      width: calc(100% - 24px);
+      display: block;
+      width: calc(100% - 24px - 30px - 12px);
+    }
+
+    .close-icon {
+      display: block;
+      width: 30px;
+      height: 30px;
+      @include respond(desk-xl) {
+        display: none;
+      }
+    }
+    @include respond(desk-xl) {
+      display: block;
+      border-bottom: none;
     }
   }
 
   .nav {
     width: 100%;
+
+    @include respond(desk-xl) {
+      width: auto;
+      display: flex;
+    }
 
     &__item {
       display: block;
@@ -35,32 +103,37 @@ header component
       flex-direction: column;
       border-bottom: 1px solid $white;
 
+      @include respond(desk-xl) {
+        width: auto;
+        border-bottom: none;
+      }
+
       &:hover {
         color: $primary;
       }
     }
   }
-
-  @include respond(desk-xl) {
-    padding: 1.5rem 0;
-    & .wrapper {
-      flex-direction: row;
-    }
-
-    .logo-box {
-      width: auto;
-      display: block;
-    }
-
-    .nav {
-      width: auto;
-      &__item {
-        width: auto;
-        border: none;
-        &:hover {
-          color: $primary;
-        }
-      }
-    }
-  }
 }
+
+// @include respond(desk-xl) {
+//   padding: 1.5rem 0;
+//   & .wrapper {
+//     flex-direction: row;
+//   }
+
+//   .logo-box {
+//     width: auto;
+//     display: block;
+//   }
+
+//   .nav {
+//     width: auto;
+//     &__item {
+//       width: auto;
+//       border: none;
+//       &:hover {
+//         color: $primary;
+//       }
+//     }
+//   }
+// }

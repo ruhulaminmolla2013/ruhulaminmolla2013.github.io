@@ -9,17 +9,38 @@
   </head>
   <body>
     <header class="header">
-      <div class="wrapper d-flex justify-space-between alignItems-center">
-        <a class="logo-box" href="/">
-          <img class="site-logo" src="img/icon/site-logo.svg" alt="site-logo" />
-        </a>
-        <nav class="nav d-flex justify-space-between">
-          <a class="nav__item link active" href="#home">home</a>
-          <a class="nav__item link" href="#about">about</a>
-          <a class="nav__item link" href="#services">services</a>
-          <a class="nav__item link" href="#portfolio">portfolio</a>
-          <a class="nav__item link" href="#contact">contact</a>
-        </nav>
+      <img
+        id="menu"
+        class="menu-icon menu-icon__show"
+        src="img/icon/menu-icon.svg"
+        alt="menu-icon"
+      />
+      <div class="wrapper">
+        <div
+          id="drawer"
+          class="drawer drawer__close d-flex justify-space-between alignItems-center"
+        >
+          <a class="logo-box" href="/">
+            <img
+              class="site-logo"
+              src="img/icon/site-logo.svg"
+              alt="site-logo"
+            />
+            <img
+              id="close-icon"
+              class="close-icon"
+              src="img/icon/close-icon.svg"
+              alt="close-icon"
+            />
+          </a>
+          <nav class="nav d-flex justify-space-between">
+            <a class="nav__item link active" href="#home">home</a>
+            <a class="nav__item link" href="#about">about</a>
+            <a class="nav__item link" href="#services">services</a>
+            <a class="nav__item link" href="#portfolio">portfolio</a>
+            <a class="nav__item link" href="#contact">contact</a>
+          </nav>
+        </div>
       </div>
     </header>
     <main>
