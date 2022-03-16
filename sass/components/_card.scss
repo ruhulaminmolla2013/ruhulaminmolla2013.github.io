@@ -13,8 +13,8 @@
   }
 
   &__img {
-    width: 12rem;
-    height: 12rem;
+    width: 8rem;
+    height: 8rem;
     border-radius: 50%;
     background-color: $primary;
 
@@ -30,8 +30,8 @@
     margin: 0 auto;
 
     img {
-      width: 7rem;
-      height: 7rem;
+      width: 5rem;
+      height: 5rem;
       display: block;
       @include respond(desk-xl) {
         width: 14rem;

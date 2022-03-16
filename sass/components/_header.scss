@@ -5,22 +5,19 @@ header component
 .header {
   width: 100%;
   background-color: rgba($color: $secondary, $alpha: 1);
-  position: static;
-
-  @include respond(desk-xl) {
-    position: fixed;
-  }
+  position: fixed;
+  z-index: 9999;
 
   .menu-icon {
     width: 40px;
     height: 40px;
-    position: absolute;
+    position: fixed;
     left: 10px;
     top: 10px;
-    z-index: 99;
+
     transition: all 0.35s;
 
-    @include respond(desk-xl) {
+    @include respond(tab-land) {
       display: none;
     }
 
@@ -35,13 +32,13 @@ header component
   .drawer {
     margin: 0 -12px;
     left: 0;
-    position: absolute;
+    position: fixed;
     width: 100%;
-    z-index: 100;
+
     transition: all 0.35s;
     background-color: rgba($color: $dark, $alpha: 1);
 
-    @include respond(desk-xl) {
+    @include respond(tab-land) {
       background-color: transparent;
       flex-direction: row;
       margin: 0;
@@ -54,7 +51,7 @@ header component
     }
     &__close {
       margin-left: -1920px;
-      @include respond(desk-xl) {
+      @include respond(tab-land) {
         margin-left: 0;
       }
     }
@@ -67,7 +64,7 @@ header component
     align-items: center;
     border-bottom: 1px solid $white;
     padding: 12px;
-    @include respond(desk-xl) {
+    @include respond(tab-land) {
       width: auto;
       padding: 12px;
     }
@@ -80,11 +77,11 @@ header component
       display: block;
       width: 30px;
       height: 30px;
-      @include respond(desk-xl) {
+      @include respond(tab-land) {
         display: none;
       }
     }
-    @include respond(desk-xl) {
+    @include respond(tab-land) {
       display: block;
       border-bottom: none;
     }
@@ -93,7 +90,7 @@ header component
   .nav {
     width: 100%;
 
-    @include respond(desk-xl) {
+    @include respond(tab-land) {
       width: auto;
       display: flex;
     }
@@ -108,7 +105,7 @@ header component
       flex-direction: column;
       border-bottom: 1px solid $white;
 
-      @include respond(desk-xl) {
+      @include respond(tab-land) {
         width: auto;
         border-bottom: none;
       }
@@ -119,26 +116,3 @@ header component
     }
   }
 }
-
-// @include respond(desk-xl) {
-//   padding: 1.5rem 0;
-//   & .wrapper {
-//     flex-direction: row;
-//   }
-
-//   .logo-box {
-//     width: auto;
-//     display: block;
-//   }
-
-//   .nav {
-//     width: auto;
-//     &__item {
-//       width: auto;
-//       border: none;
-//       &:hover {
-//         color: $primary;
-//       }
-//     }
-//   }
-// }

@@ -94,6 +94,12 @@
 .h1 {
   font-size: 2.8rem;
   font-weight: 700;
+  @include respond(desk) {
+    font-size: 4.8rem;
+  }
+  @include respond(desk-md) {
+    font-size: 7.2rem;
+  }
 }
 
 h2 {
@@ -118,14 +124,20 @@ h2 {
 .body3 {
   font-size: 1.6rem;
   font-weight: 300;
-  @include respond(desk-xl) {
+  @include respond(desk) {
     font-size: 2.4rem;
   }
 }
 
 .link {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 400;
+  @include respond(desk) {
+    font-size: 2rem;
+  }
+  @include respond(desk-md) {
+    font-size: 2.4rem;
+  }
 }
 
 .bold {
@@ -163,161 +175,161 @@ h2 {
   width: 100%;
 }
 
-@include respond(desk-xl) {
-  .wrapper {
-    padding: 0 130px;
-  }
-  /*** text color **/
-  .active {
-    color: $primary;
-  }
+// @include respond(desk) {
+//   .wrapper {
+//     padding: 0 130px;
+//   }
+//   /*** text color **/
+//   .active {
+//     color: $primary;
+//   }
 
-  .text-primary {
-    color: $primary;
-  }
-  .text-secondary {
-    color: $secondary;
-  }
+//   .text-primary {
+//     color: $primary;
+//   }
+//   .text-secondary {
+//     color: $secondary;
+//   }
 
-  .text-dark {
-    color: $dark;
-  }
-  .text-light {
-    color: $light;
-  }
-  .text-white {
-    color: $white;
-  }
+//   .text-dark {
+//     color: $dark;
+//   }
+//   .text-light {
+//     color: $light;
+//   }
+//   .text-white {
+//     color: $white;
+//   }
 
-  .bg-primary {
-    background-color: $primary;
-  }
+//   .bg-primary {
+//     background-color: $primary;
+//   }
 
-  .bg-secondary {
-    background-color: rgba($color: $secondary, $alpha: 0.3);
-  }
+//   .bg-secondary {
+//     background-color: rgba($color: $secondary, $alpha: 0.3);
+//   }
 
-  .bg-white {
-    background-color: $white;
-  }
+//   .bg-white {
+//     background-color: $white;
+//   }
 
-  .bg-dark {
-    background-color: $dark;
-  }
+//   .bg-dark {
+//     background-color: $dark;
+//   }
 
-  .text-center {
-    text-align: center;
-  }
+//   .text-center {
+//     text-align: center;
+//   }
 
-  .text-tr-none {
-    text-transform: none;
-  }
+//   .text-tr-none {
+//     text-transform: none;
+//   }
 
-  /********display ******/
+//   /********display ******/
 
-  .d-inline {
-    display: inline-block;
-  }
+//   .d-inline {
+//     display: inline-block;
+//   }
 
-  .d-block {
-    display: block;
-  }
+//   .d-block {
+//     display: block;
+//   }
 
-  /**** flex classes ****/
+//   /**** flex classes ****/
 
-  .d-flex {
-    display: flex;
-    flex-wrap: wrap;
-  }
+//   .d-flex {
+//     display: flex;
+//     flex-wrap: wrap;
+//   }
 
-  .flex-d-column {
-    flex-direction: column;
-  }
+//   .flex-d-column {
+//     flex-direction: column;
+//   }
 
-  .flex-d-row {
-    flex-direction: row;
-  }
+//   .flex-d-row {
+//     flex-direction: row;
+//   }
 
-  .justify-space-between {
-    justify-content: space-between;
-  }
+//   .justify-space-between {
+//     justify-content: space-between;
+//   }
 
-  .justify-center {
-    justify-content: center;
-  }
+//   .justify-center {
+//     justify-content: center;
+//   }
 
-  .alignItems-center {
-    align-items: center;
-  }
+//   .alignItems-center {
+//     align-items: center;
+//   }
 
-  /**** typography ****/
+//   /**** typography ****/
 
-  .h1 {
-    font-size: 7.2rem;
-    font-weight: 700;
-  }
+//   .h1 {
+//     font-size: 7.2rem;
+//     font-weight: 700;
+//   }
 
-  h2 {
-    font-size: 4.8rem;
-    font-weight: 500;
-  }
+//   h2 {
+//     font-size: 4.8rem;
+//     font-weight: 500;
+//   }
 
-  .h3 {
-    font-size: 3.6rem;
-    font-weight: 600;
-  }
+//   .h3 {
+//     font-size: 3.6rem;
+//     font-weight: 600;
+//   }
 
-  .body1 {
-    font-size: 3.2rem;
-    font-weight: 300;
-  }
+//   .body1 {
+//     font-size: 3.2rem;
+//     font-weight: 300;
+//   }
 
-  .body2 {
-    font-size: 2.4rem;
-    font-weight: 300;
-  }
-  .body3 {
-    font-size: 2rem;
-    font-weight: 300;
-  }
+//   .body2 {
+//     font-size: 2.4rem;
+//     font-weight: 300;
+//   }
+//   .body3 {
+//     font-size: 2rem;
+//     font-weight: 300;
+//   }
 
-  .link {
-    font-size: 2.4rem;
-    font-weight: 400;
-  }
+//   .link {
+//     font-size: 2.4rem;
+//     font-weight: 400;
+//   }
 
-  .bold {
-    font-weight: 500;
-  }
+//   .bold {
+//     font-weight: 500;
+//   }
 
-  /****margin****/
-  .m-right-30 {
-    margin-right: 3rem;
-  }
-  .mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .m-b-10 {
-    margin-bottom: 1rem;
-  }
-  .m-b-20 {
-    margin-bottom: 2rem;
-  }
-  .m-b-30 {
-    margin-bottom: 3rem;
-  }
-  .m-b-33 {
-    margin-bottom: 3.3rem;
-  }
+//   /****margin****/
+//   .m-right-30 {
+//     margin-right: 3rem;
+//   }
+//   .mx-auto {
+//     margin-left: auto;
+//     margin-right: auto;
+//   }
+//   .m-b-10 {
+//     margin-bottom: 1rem;
+//   }
+//   .m-b-20 {
+//     margin-bottom: 2rem;
+//   }
+//   .m-b-30 {
+//     margin-bottom: 3rem;
+//   }
+//   .m-b-33 {
+//     margin-bottom: 3.3rem;
+//   }
 
-  /*******eidyh *****/
+//   /*******eidyh *****/
 
-  .width-50 {
-    width: 50%;
-  }
+//   .width-50 {
+//     width: 50%;
+//   }
 
-  .width-100 {
-    width: 100%;
-  }
-}
+//   .width-100 {
+//     width: 100%;
+//   }
+// }

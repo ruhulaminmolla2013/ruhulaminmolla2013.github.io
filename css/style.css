@@ -133,6 +133,16 @@ a {
   font-size: 2.8rem;
   font-weight: 700;
 }
+@media only screen and (min-width: 992px) {
+  .h1 {
+    font-size: 4.8rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .h1 {
+    font-size: 7.2rem;
+  }
+}
 
 h2 {
   font-size: 4.8rem;
@@ -158,15 +168,25 @@ h2 {
   font-size: 1.6rem;
   font-weight: 300;
 }
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 992px) {
   .body3 {
     font-size: 2.4rem;
   }
 }
 
 .link {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 400;
+}
+@media only screen and (min-width: 992px) {
+  .link {
+    font-size: 2rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .link {
+    font-size: 2.4rem;
+  }
 }
 
 .bold {
@@ -208,193 +228,24 @@ h2 {
   width: 100%;
 }
 
-@media only screen and (min-width: 1900px) {
-  .wrapper {
-    padding: 0 130px;
-  }
-
-  /*** text color **/
-  .active {
-    color: #e9b928;
-  }
-
-  .text-primary {
-    color: #e9b928;
-  }
-
-  .text-secondary {
-    color: #a8a8a8;
-  }
-
-  .text-dark {
-    color: #313131;
-  }
-
-  .text-light {
-    color: #606060;
-  }
-
-  .text-white {
-    color: #ffffff;
-  }
-
-  .bg-primary {
-    background-color: #e9b928;
-  }
-
-  .bg-secondary {
-    background-color: rgba(168, 168, 168, 0.3);
-  }
-
-  .bg-white {
-    background-color: #ffffff;
-  }
-
-  .bg-dark {
-    background-color: #313131;
-  }
-
-  .text-center {
-    text-align: center;
-  }
-
-  .text-tr-none {
-    text-transform: none;
-  }
-
-  /********display ******/
-  .d-inline {
-    display: inline-block;
-  }
-
-  .d-block {
-    display: block;
-  }
-
-  /**** flex classes ****/
-  .d-flex {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .flex-d-column {
-    flex-direction: column;
-  }
-
-  .flex-d-row {
-    flex-direction: row;
-  }
-
-  .justify-space-between {
-    justify-content: space-between;
-  }
-
-  .justify-center {
-    justify-content: center;
-  }
-
-  .alignItems-center {
-    align-items: center;
-  }
-
-  /**** typography ****/
-  .h1 {
-    font-size: 7.2rem;
-    font-weight: 700;
-  }
-
-  h2 {
-    font-size: 4.8rem;
-    font-weight: 500;
-  }
-
-  .h3 {
-    font-size: 3.6rem;
-    font-weight: 600;
-  }
-
-  .body1 {
-    font-size: 3.2rem;
-    font-weight: 300;
-  }
-
-  .body2 {
-    font-size: 2.4rem;
-    font-weight: 300;
-  }
-
-  .body3 {
-    font-size: 2rem;
-    font-weight: 300;
-  }
-
-  .link {
-    font-size: 2.4rem;
-    font-weight: 400;
-  }
-
-  .bold {
-    font-weight: 500;
-  }
-
-  /****margin****/
-  .m-right-30 {
-    margin-right: 3rem;
-  }
-
-  .mx-auto {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .m-b-10 {
-    margin-bottom: 1rem;
-  }
-
-  .m-b-20 {
-    margin-bottom: 2rem;
-  }
-
-  .m-b-30 {
-    margin-bottom: 3rem;
-  }
-
-  .m-b-33 {
-    margin-bottom: 3.3rem;
-  }
-
-  /*******eidyh *****/
-  .width-50 {
-    width: 50%;
-  }
-
-  .width-100 {
-    width: 100%;
-  }
-}
 /***
 header component
 ***/
 .header {
   width: 100%;
   background-color: #a8a8a8;
-  position: static;
-}
-@media only screen and (min-width: 1900px) {
-  .header {
-    position: fixed;
-  }
+  position: fixed;
+  z-index: 9999;
 }
 .header .menu-icon {
   width: 40px;
   height: 40px;
-  position: absolute;
+  position: fixed;
   left: 10px;
   top: 10px;
-  z-index: 99;
   transition: all 0.35s;
 }
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 768px) {
   .header .menu-icon {
     display: none;
   }
@@ -408,13 +259,12 @@ header component
 .header .drawer {
   margin: 0 -12px;
   left: 0;
-  position: absolute;
+  position: fixed;
   width: 100%;
-  z-index: 100;
   transition: all 0.35s;
   background-color: #313131;
 }
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 768px) {
   .header .drawer {
     background-color: transparent;
     flex-direction: row;
@@ -429,7 +279,7 @@ header component
 .header .drawer__close {
   margin-left: -1920px;
 }
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 768px) {
   .header .drawer__close {
     margin-left: 0;
   }
@@ -442,7 +292,7 @@ header component
   border-bottom: 1px solid #ffffff;
   padding: 12px;
 }
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 768px) {
   .header .logo-box {
     width: auto;
     padding: 12px;
@@ -457,12 +307,12 @@ header component
   width: 30px;
   height: 30px;
 }
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 768px) {
   .header .logo-box .close-icon {
     display: none;
   }
 }
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 768px) {
   .header .logo-box {
     display: block;
     border-bottom: none;
@@ -471,7 +321,7 @@ header component
 .header .nav {
   width: 100%;
 }
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 768px) {
   .header .nav {
     width: auto;
     display: flex;
@@ -487,7 +337,7 @@ header component
   flex-direction: column;
   border-bottom: 1px solid #ffffff;
 }
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 768px) {
   .header .nav__item {
     width: auto;
     border-bottom: none;
@@ -511,8 +361,8 @@ header component
   margin-bottom: 2rem;
 }
 .card__img {
-  width: 12rem;
-  height: 12rem;
+  width: 8rem;
+  height: 8rem;
   border-radius: 50%;
   background-color: #e9b928;
   display: flex;
@@ -527,8 +377,8 @@ header component
   }
 }
 .card__img img {
-  width: 7rem;
-  height: 7rem;
+  width: 5rem;
+  height: 5rem;
   display: block;
 }
 @media only screen and (min-width: 1900px) {
@@ -601,7 +451,7 @@ header component
 
 .section {
   width: 100%;
-  padding: 2rem 0;
+  padding: 4rem 0;
 }
 @media only screen and (min-width: 1900px) {
   .section {
@@ -613,7 +463,7 @@ header component
   color: #e9b928;
   font-weight: 500;
   text-align: center;
-  margin-bottom: 2rem;
+  padding-bottom: 4rem;
   text-transform: uppercase;
 }
 @media only screen and (min-width: 1900px) {
@@ -662,7 +512,7 @@ header component
   align-items: center;
   flex-direction: column;
 }
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 992px) {
   .about {
     flex-direction: row;
     justify-content: space-between;
@@ -675,17 +525,20 @@ header component
   display: flex;
   flex-direction: column;
   text-align: center;
+  order: 2;
 }
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 992px) {
   .about__description {
+    width: calc(75% - 30px);
     margin-bottom: 2.5rem;
     text-align: left;
+    order: 1;
   }
 }
 .about__description > *:not(:last-child) {
   margin-bottom: 1.2rem;
 }
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 992px) {
   .about__description > *:not(:last-child) {
     margin-bottom: 2.5rem;
   }
@@ -700,7 +553,7 @@ header component
   border-top: 1px solid #a8a8a8;
   padding-top: 2rem;
 }
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 992px) {
   .about__description .skill {
     text-align: left;
     border-top: none;
@@ -711,7 +564,7 @@ header component
   width: 50%;
   margin-bottom: 30px;
 }
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 992px) {
   .about__description .skill__set {
     width: 25%;
   }
@@ -720,15 +573,19 @@ header component
   list-style-type: none;
 }
 .about__picture {
-  max-width: 300px;
-  height: 300px;
+  max-width: 240px;
+  height: 240px;
   border-radius: 50%;
   overflow: hidden;
+  order: 1;
+  margin-bottom: 3rem;
 }
 @media only screen and (min-width: 1900px) {
   .about__picture {
-    max-width: 430px;
-    height: 430px;
+    width: 430px;
+    height: auto;
+    order: 2;
+    margin-bottom: 0;
   }
 }
 .about__picture img {
@@ -738,12 +595,18 @@ header component
 
 .service {
   width: 100%;
+  padding-top: 30px;
+}
+@media only screen and (min-width: 1900px) {
+  .service {
+    padding: 12rem;
+  }
 }
 .service__item {
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 992px) {
   .service__item {
     width: calc((100% - 60px) / 3);
     margin-bottom: 30px;
@@ -770,14 +633,21 @@ header component
 }
 .portfolio__item {
   width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   border: 1px solid #e7e7e7;
   position: relative;
   text-align: center;
   color: #ffffff;
   overflow: hidden;
+  box-shadow: 0 0px 3px rgba(233, 185, 40, 0.65);
 }
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 768px) {
+  .portfolio__item {
+    width: calc((100% - 30px) / 2);
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (min-width: 1200px) {
   .portfolio__item {
     width: calc((100% - 60px) / 3);
     margin-bottom: 30px;
@@ -819,6 +689,9 @@ header component
 .hire {
   text-align: center;
 }
+.hire > .section__title {
+  padding-bottom: 0;
+}
 @media only screen and (min-width: 1900px) {
   .hire .btn {
     padding: 12px 40px;
@@ -829,7 +702,7 @@ header component
   padding-top: 2.5rem;
   line-height: 1.5;
 }
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 992px) {
   .contact {
     padding-top: 10rem;
   }
@@ -842,7 +715,13 @@ header component
   width: 100%;
   margin-bottom: 1.5rem;
 }
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 768px) {
+  .contact .wrapper > *:not(:last-child) {
+    width: calc((100% - 30px) / 2);
+    margin-bottom: 3rem;
+  }
+}
+@media only screen and (min-width: 992px) {
   .contact .wrapper > *:not(:last-child) {
     width: 23.5%;
     margin-bottom: 3rem;
@@ -853,13 +732,23 @@ header component
   flex-direction: column;
   order: 4;
 }
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 768px) {
+  .contact__about {
+    order: 3;
+  }
+}
+@media only screen and (min-width: 992px) {
   .contact__about {
     order: 1;
   }
 }
 .contact__about > *:not(:first-child) {
   margin-bottom: 1.5rem;
+}
+@media only screen and (min-width: 576px) {
+  .contact__about > *:not(:first-child) {
+    margin-bottom: 2.5rem;
+  }
 }
 @media only screen and (min-width: 1900px) {
   .contact__about > *:not(:first-child) {
@@ -898,11 +787,31 @@ header component
 .contact__service {
   order: 2;
 }
+@media only screen and (min-width: 768px) {
+  .contact__service {
+    order: 1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .contact__service {
+    order: 2;
+  }
+}
 .contact__service ul {
   list-style: none;
 }
 .contact__address {
   order: 3;
+}
+@media only screen and (min-width: 768px) {
+  .contact__address {
+    order: 2;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .contact__address {
+    order: 3;
+  }
 }
 .contact__address ul {
   list-style: none;
@@ -920,7 +829,7 @@ header component
   font-size: 24px;
   order: 1;
 }
-@media only screen and (min-width: 1900px) {
+@media only screen and (min-width: 768px) {
   .contact__get-in-touch {
     order: 4;
   }
