@@ -5,11 +5,15 @@
   border: 1px solid $white;
   box-shadow: 1px 1px 5px #fff;
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 2.5rem;
   border-radius: 1.6rem;
 
+  @include respond(desk-md) {
+    padding: 3rem 2rem;
+  }
+
   & > *:not(:last-child) {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 
   &__img {
@@ -17,22 +21,29 @@
     height: 8rem;
     border-radius: 50%;
     background-color: $primary;
+    margin: 0 auto;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
+    @include respond(desk-md) {
+      width: 16rem;
+      height: 16rem;
+    }
     @include respond(desk-xl) {
       width: 24rem;
       height: 24rem;
     }
 
-    margin: 0 auto;
-
     img {
       width: 5rem;
       height: 5rem;
       display: block;
+      @include respond(desk-md) {
+        width: 10rem;
+        height: 10rem;
+      }
       @include respond(desk-xl) {
         width: 14rem;
         height: 14rem;

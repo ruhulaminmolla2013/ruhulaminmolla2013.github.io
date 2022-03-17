@@ -1,11 +1,198 @@
+// .wrapper {
+//   max-width: 1920px;
+//   width: 100%;
+//   margin: 0 auto;
+//   padding: 0 12px;
+//   position: relative;
+// }
+
+// /*** text color **/
+// .active {
+//   color: $primary;
+// }
+
+// .text-primary {
+//   color: $primary;
+// }
+// .text-secondary {
+//   color: $secondary;
+// }
+
+// .text-dark {
+//   color: $dark;
+// }
+// .text-light {
+//   color: $light;
+// }
+// .text-white {
+//   color: $white !important;
+// }
+
+// .bg-primary {
+//   background-color: $primary;
+// }
+
+// .bg-secondary {
+//   background-color: rgba($color: $secondary, $alpha: 0.3);
+// }
+
+// .bg-white {
+//   background-color: $white;
+// }
+
+// .bg-dark {
+//   background-color: $dark !important;
+// }
+
+// .text-center {
+//   text-align: center;
+// }
+
+// .text-tr-none {
+//   text-transform: none !important;
+// }
+
+// /********display ******/
+
+// .d-inline {
+//   display: inline-block;
+// }
+
+// .d-block {
+//   display: block;
+// }
+
+// /**** flex classes ****/
+
+// .d-flex {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+
+// .flex-d-column {
+//   flex-direction: column;
+// }
+
+// .flex-d-row {
+//   flex-direction: row;
+// }
+
+// .justify-space-between {
+//   justify-content: space-between;
+// }
+
+// .justify-center {
+//   justify-content: center;
+// }
+
+// .alignItems-center {
+//   align-items: center;
+// }
+
+// /**** typography ****/
+
+// .h1 {
+//   font-size: 2.8rem;
+//   font-weight: 700;
+//   @include respond(desk) {
+//     font-size: 4.8rem;
+//   }
+//   @include respond(desk-md) {
+//     font-size: 7.2rem;
+//   }
+// }
+
+// h2 {
+//   font-size: 4.8rem;
+//   font-weight: 500;
+// }
+
+// .h3 {
+//   font-size: 1.8rem;
+//   font-weight: 600;
+// }
+
+// .body1 {
+//   font-size: 1.5rem;
+//   font-weight: 300;
+// }
+
+// .body2 {
+//   font-size: 1.5rem;
+//   font-weight: 300;
+// }
+// .body3 {
+//   font-size: 1.6rem;
+//   font-weight: 300;
+//   @include respond(desk) {
+//     font-size: 2.4rem;
+//   }
+// }
+
+// .link {
+//   font-size: 1.5rem;
+//   font-weight: 400;
+//   @include respond(desk) {
+//     font-size: 2rem;
+//   }
+//   @include respond(desk-md) {
+//     font-size: 2.4rem;
+//   }
+// }
+
+// .bold {
+//   font-weight: 500;
+// }
+
+// /****margin****/
+// .m-right-30 {
+//   margin-right: 3rem;
+// }
+// .mx-auto {
+//   margin-left: auto;
+//   margin-right: auto;
+// }
+// .m-b-10 {
+//   margin-bottom: 1rem;
+// }
+// .m-b-20 {
+//   margin-bottom: 2rem;
+// }
+// .m-b-30 {
+//   margin-bottom: 3rem;
+// }
+// .m-b-33 {
+//   margin-bottom: 1.5rem;
+// }
+
+// /*******eidyh *****/
+
+// .width-50 {
+//   width: 50%;
+// }
+
+// .width-100 {
+//   width: 100%;
+// }
+
 .wrapper {
   max-width: 1920px;
   width: 100%;
   margin: 0 auto;
   padding: 0 12px;
   position: relative;
-}
 
+  @include respond(desk) {
+    padding: 0 24px;
+  }
+  @include respond(desk-md) {
+    padding: 0 60px;
+  }
+
+  @include respond(desk-xl) {
+    padding: 0 130px;
+  }
+}
 /*** text color **/
 .active {
   color: $primary;
@@ -49,7 +236,7 @@
 }
 
 .text-tr-none {
-  text-transform: none !important;
+  text-transform: none;
 }
 
 /********display ******/
@@ -92,12 +279,12 @@
 /**** typography ****/
 
 .h1 {
-  font-size: 2.8rem;
+  font-size: 3.2rem;
   font-weight: 700;
-  @include respond(desk) {
+  @include respond(tab-port) {
     font-size: 4.8rem;
   }
-  @include respond(desk-md) {
+  @include respond(desk) {
     font-size: 7.2rem;
   }
 }
@@ -108,35 +295,56 @@ h2 {
 }
 
 .h3 {
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   font-weight: 600;
+
+  @include respond(tab-land) {
+    font-size: 2.8rem;
+  }
+  @include respond(desk) {
+    font-size: 3rem;
+  }
+
+  @include respond(desk-xl) {
+    font-size: 3.6rem;
+  }
 }
 
 .body1 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 300;
+  @include respond(tab-port) {
+    font-size: 2.4rem;
+  }
+  @include respond(desk) {
+    font-size: 2.8rem;
+  }
+  @include respond(desk-md) {
+    font-size: 3rem;
+  }
+  @include respond(desk-xl) {
+    font-size: 3.2rem;
+  }
 }
 
 .body2 {
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   font-weight: 300;
 }
 .body3 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 300;
-  @include respond(desk) {
-    font-size: 2.4rem;
+
+  @include respond(tab-port) {
+    font-size: 2rem;
   }
 }
 
 .link {
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   font-weight: 400;
-  @include respond(desk) {
-    font-size: 2rem;
-  }
   @include respond(desk-md) {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 }
 
@@ -162,7 +370,7 @@ h2 {
   margin-bottom: 3rem;
 }
 .m-b-33 {
-  margin-bottom: 1.5rem;
+  margin-bottom: 3.3rem;
 }
 
 /*******eidyh *****/
@@ -174,162 +382,3 @@ h2 {
 .width-100 {
   width: 100%;
 }
-
-// @include respond(desk) {
-//   .wrapper {
-//     padding: 0 130px;
-//   }
-//   /*** text color **/
-//   .active {
-//     color: $primary;
-//   }
-
-//   .text-primary {
-//     color: $primary;
-//   }
-//   .text-secondary {
-//     color: $secondary;
-//   }
-
-//   .text-dark {
-//     color: $dark;
-//   }
-//   .text-light {
-//     color: $light;
-//   }
-//   .text-white {
-//     color: $white;
-//   }
-
-//   .bg-primary {
-//     background-color: $primary;
-//   }
-
-//   .bg-secondary {
-//     background-color: rgba($color: $secondary, $alpha: 0.3);
-//   }
-
-//   .bg-white {
-//     background-color: $white;
-//   }
-
-//   .bg-dark {
-//     background-color: $dark;
-//   }
-
-//   .text-center {
-//     text-align: center;
-//   }
-
-//   .text-tr-none {
-//     text-transform: none;
-//   }
-
-//   /********display ******/
-
-//   .d-inline {
-//     display: inline-block;
-//   }
-
-//   .d-block {
-//     display: block;
-//   }
-
-//   /**** flex classes ****/
-
-//   .d-flex {
-//     display: flex;
-//     flex-wrap: wrap;
-//   }
-
-//   .flex-d-column {
-//     flex-direction: column;
-//   }
-
-//   .flex-d-row {
-//     flex-direction: row;
-//   }
-
-//   .justify-space-between {
-//     justify-content: space-between;
-//   }
-
-//   .justify-center {
-//     justify-content: center;
-//   }
-
-//   .alignItems-center {
-//     align-items: center;
-//   }
-
-//   /**** typography ****/
-
-//   .h1 {
-//     font-size: 7.2rem;
-//     font-weight: 700;
-//   }
-
-//   h2 {
-//     font-size: 4.8rem;
-//     font-weight: 500;
-//   }
-
-//   .h3 {
-//     font-size: 3.6rem;
-//     font-weight: 600;
-//   }
-
-//   .body1 {
-//     font-size: 3.2rem;
-//     font-weight: 300;
-//   }
-
-//   .body2 {
-//     font-size: 2.4rem;
-//     font-weight: 300;
-//   }
-//   .body3 {
-//     font-size: 2rem;
-//     font-weight: 300;
-//   }
-
-//   .link {
-//     font-size: 2.4rem;
-//     font-weight: 400;
-//   }
-
-//   .bold {
-//     font-weight: 500;
-//   }
-
-//   /****margin****/
-//   .m-right-30 {
-//     margin-right: 3rem;
-//   }
-//   .mx-auto {
-//     margin-left: auto;
-//     margin-right: auto;
-//   }
-//   .m-b-10 {
-//     margin-bottom: 1rem;
-//   }
-//   .m-b-20 {
-//     margin-bottom: 2rem;
-//   }
-//   .m-b-30 {
-//     margin-bottom: 3rem;
-//   }
-//   .m-b-33 {
-//     margin-bottom: 3.3rem;
-//   }
-
-//   /*******eidyh *****/
-
-//   .width-50 {
-//     width: 50%;
-//   }
-
-//   .width-100 {
-//     width: 100%;
-//   }
-// }

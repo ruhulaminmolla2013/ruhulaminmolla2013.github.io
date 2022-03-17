@@ -1,0 +1,31 @@
+$charade: #282a37;
+$bluebell: #979fd0;
+
+.loding-animation {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  background-color: $charade;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .item {
+    width: 10rem;
+    height: 10rem;
+    margin: 2rem;
+    border-radius: 50%;
+    border: 5px solid rgba($bluebell, 0.3);
+    border-top-color: $bluebell;
+    animation: 1.5s spin infinite linear;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

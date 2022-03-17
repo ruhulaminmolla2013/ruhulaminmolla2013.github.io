@@ -5,9 +5,11 @@ header component
 .header {
   width: 100%;
   background-color: rgba($color: $secondary, $alpha: 1);
-  position: fixed;
+  position: static;
   z-index: 9999;
-
+  @include respond(desk) {
+    position: fixed;
+  }
   .menu-icon {
     width: 40px;
     height: 40px;
@@ -17,8 +19,9 @@ header component
 
     transition: all 0.35s;
 
-    @include respond(tab-land) {
+    @include respond(desk) {
       display: none;
+      position: relative;
     }
 
     &__show {
@@ -30,28 +33,30 @@ header component
   }
 
   .drawer {
-    margin: 0 -12px;
     left: 0;
     position: fixed;
     width: 100%;
+    padding: 12px;
 
     transition: all 0.35s;
     background-color: rgba($color: $dark, $alpha: 1);
 
-    @include respond(tab-land) {
+    @include respond(desk) {
+      position: relative;
       background-color: transparent;
       flex-direction: row;
       margin: 0;
       left: 0;
       position: relative;
+      padding: 0;
     }
 
     &__open {
       margin-left: 0;
     }
     &__close {
-      margin-left: -1920px;
-      @include respond(tab-land) {
+      margin-left: -100%;
+      @include respond(desk) {
         margin-left: 0;
       }
     }
@@ -63,10 +68,11 @@ header component
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid $white;
-    padding: 12px;
-    @include respond(tab-land) {
+
+    @include respond(desk) {
       width: auto;
-      padding: 12px;
+      display: block;
+      border-bottom: none;
     }
     .site-logo {
       display: block;
@@ -77,20 +83,16 @@ header component
       display: block;
       width: 30px;
       height: 30px;
-      @include respond(tab-land) {
+      @include respond(desk) {
         display: none;
       }
-    }
-    @include respond(tab-land) {
-      display: block;
-      border-bottom: none;
     }
   }
 
   .nav {
     width: 100%;
 
-    @include respond(tab-land) {
+    @include respond(desk) {
       width: auto;
       display: flex;
     }
@@ -105,7 +107,7 @@ header component
       flex-direction: column;
       border-bottom: 1px solid $white;
 
-      @include respond(tab-land) {
+      @include respond(desk) {
         width: auto;
         border-bottom: none;
       }
