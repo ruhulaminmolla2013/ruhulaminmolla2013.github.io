@@ -1,14 +1,14 @@
 const windowLoding = document.getElementById("loadingAnimation");
 
 window.addEventListener("load", () => {
-  windowLoding.style.display = "none";
+  windowLoding.style.display = "flex";
 });
 
 // header / drawer
 const menuIcon = document.getElementById("menu");
 const drawer = document.getElementById("drawer");
 const closeIcon = document.getElementById("close-icon");
-const nav = document.getElementById("nav");
+// const nav = document.getElementById("nav");
 
 menuIcon.addEventListener("click", openDrawer);
 closeIcon.addEventListener("click", closeDrawer);

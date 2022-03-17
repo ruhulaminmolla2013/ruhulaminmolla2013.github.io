@@ -13,19 +13,52 @@ $bluebell: #979fd0;
   justify-content: center;
   align-items: center;
 
-  .item {
+  // .item {
+  //   width: 10rem;
+  //   height: 10rem;
+  //   margin: 2rem;
+  //   border-radius: 50%;
+  //   border: 5px solid rgba($bluebell, 0.3);
+  //   border-top-color: $bluebell;
+  //   animation: 1.5s spin infinite linear;
+  // }
+
+  .icon {
     width: 10rem;
     height: 10rem;
-    margin: 2rem;
-    border-radius: 50%;
-    border: 5px solid rgba($bluebell, 0.3);
-    border-top-color: $bluebell;
-    animation: 1.5s spin infinite linear;
+
+    path {
+      animation: animate-letter 1s linear;
+      animation-delay: 1s;
+      opacity: 1;
+      animation-delay: 1s;
+    }
+    polygon {
+      stroke-dasharray: 375;
+      stroke-dashoffset: 0;
+      animation: animate-logo 1s;
+    }
   }
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
+// @keyframes spin {
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }
+@keyframes animate-logo {
+  0% {
+    stroke-dashoffset: -375;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes animate-letter {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

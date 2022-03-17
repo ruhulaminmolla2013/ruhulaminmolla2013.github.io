@@ -225,12 +225,12 @@ h2 {
 }
 
 .link {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 400;
 }
 @media only screen and (min-width: 1200px) {
   .link {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
 }
 
@@ -279,7 +279,7 @@ header component
 .header {
   width: 100%;
   background-color: #a8a8a8;
-  position: static;
+  position: relative;
   z-index: 9999;
 }
 @media only screen and (min-width: 992px) {
@@ -287,11 +287,14 @@ header component
     position: fixed;
   }
 }
+.header .m-logo {
+  left: 10px !important;
+}
 .header .menu-icon {
   width: 40px;
   height: 40px;
   position: fixed;
-  left: 10px;
+  right: 10px;
   top: 10px;
   transition: all 0.35s;
 }
@@ -311,7 +314,6 @@ header component
   left: 0;
   position: fixed;
   width: 100%;
-  padding: 12px;
   transition: all 0.35s;
   background-color: #313131;
 }
@@ -330,7 +332,7 @@ header component
   margin-left: 0;
 }
 .header .drawer__close {
-  margin-left: -100%;
+  margin-left: 100%;
 }
 @media only screen and (min-width: 992px) {
   .header .drawer__close {
@@ -343,6 +345,7 @@ header component
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #ffffff;
+  padding: 16px 12px;
 }
 @media only screen and (min-width: 992px) {
   .header .logo-box {
@@ -352,8 +355,8 @@ header component
   }
 }
 .header .logo-box .site-logo {
-  display: block;
-  width: calc(100% - 24px - 30px - 12px);
+  width: 40px;
+  height: 40px;
 }
 .header .logo-box .close-icon {
   display: block;
@@ -525,19 +528,36 @@ header component
   justify-content: center;
   align-items: center;
 }
-.loding-animation .item {
+.loding-animation .icon {
   width: 10rem;
   height: 10rem;
-  margin: 2rem;
-  border-radius: 50%;
-  border: 5px solid rgba(151, 159, 208, 0.3);
-  border-top-color: #979fd0;
-  animation: 1.5s spin infinite linear;
+}
+.loding-animation .icon path {
+  animation: animate-letter 1s linear;
+  animation-delay: 1s;
+  opacity: 1;
+  animation-delay: 1s;
+}
+.loding-animation .icon polygon {
+  stroke-dasharray: 375;
+  stroke-dashoffset: 0;
+  animation: animate-logo 1s;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
+@keyframes animate-logo {
+  0% {
+    stroke-dashoffset: -375;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes animate-letter {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 .section {

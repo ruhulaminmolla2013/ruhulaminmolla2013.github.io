@@ -5,16 +5,20 @@ header component
 .header {
   width: 100%;
   background-color: rgba($color: $secondary, $alpha: 1);
-  position: static;
+  position: relative;
   z-index: 9999;
   @include respond(desk) {
     position: fixed;
   }
+  .m-logo {
+    left: 10px !important;
+  }
+
   .menu-icon {
     width: 40px;
     height: 40px;
     position: fixed;
-    left: 10px;
+    right: 10px;
     top: 10px;
 
     transition: all 0.35s;
@@ -36,8 +40,7 @@ header component
     left: 0;
     position: fixed;
     width: 100%;
-    padding: 12px;
-
+    // padding: 12px;
     transition: all 0.35s;
     background-color: rgba($color: $dark, $alpha: 1);
 
@@ -55,7 +58,7 @@ header component
       margin-left: 0;
     }
     &__close {
-      margin-left: -100%;
+      margin-left: 100%;
       @include respond(desk) {
         margin-left: 0;
       }
@@ -68,6 +71,7 @@ header component
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid $white;
+    padding: 16px 12px;
 
     @include respond(desk) {
       width: auto;
@@ -75,8 +79,8 @@ header component
       border-bottom: none;
     }
     .site-logo {
-      display: block;
-      width: calc(100% - 24px - 30px - 12px);
+      width: 40px;
+      height: 40px;
     }
 
     .close-icon {
