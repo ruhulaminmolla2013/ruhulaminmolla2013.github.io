@@ -1,7 +1,7 @@
 const windowLoding = document.getElementById("loadingAnimation");
 
 window.addEventListener("load", () => {
-  windowLoding.style.display = "flex";
+  windowLoding.style.display = "none";
 });
 
 // header / drawer
