@@ -25,6 +25,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -278,7 +279,6 @@ header component
 ***/
 .header {
   width: 100%;
-  background-color: #a8a8a8;
   position: relative;
   z-index: 9999;
 }
@@ -287,28 +287,34 @@ header component
     position: fixed;
   }
 }
-.header .m-logo {
-  left: 10px !important;
-}
-.header .menu-icon {
-  width: 40px;
-  height: 40px;
+.header .menu {
+  width: 100%;
+  padding: 12px;
   position: fixed;
-  right: 10px;
-  top: 10px;
-  transition: all 0.35s;
+  left: 0;
+  top: 0px;
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  transition: all 0.75s;
 }
 @media only screen and (min-width: 992px) {
-  .header .menu-icon {
+  .header .menu {
     display: none;
-    position: relative;
   }
 }
-.header .menu-icon__show {
+.header .menu--dark {
+  background-color: #a8a8a8;
+}
+.header .menu__show {
   visibility: visible;
 }
-.header .menu-icon__hide {
+.header .menu__hide {
   visibility: hidden;
+}
+.header .menu .menu-icon {
+  width: 40px;
+  height: 40px;
 }
 .header .drawer {
   left: 0;
@@ -841,6 +847,9 @@ header component
 }
 .hire > .section__title {
   padding-bottom: 0;
+}
+.hire .btn {
+  cursor: pointer;
 }
 @media only screen and (min-width: 992px) {
   .hire .btn {

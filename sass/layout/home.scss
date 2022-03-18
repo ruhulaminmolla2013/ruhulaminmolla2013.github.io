@@ -272,6 +272,7 @@
   }
 
   & .btn {
+    cursor: pointer;
     @include respond(desk) {
       padding: 12px 40px;
     }

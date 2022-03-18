@@ -8,26 +8,22 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header class="header">
-      <img
-        id="m-logo"
-        class="m-logo menu-icon menu-icon__show"
-        src="img/logo-R.svg"
-        alt="menu-icon"
-      />
-      <img
-        id="menu"
-        class="menu-icon menu-icon__show"
-        src="img/icon/menu-icon.svg"
-        alt="menu-icon"
-      />
+    <header id="header" class="header">
+      <div id="menu" class="menu menu__show">
+        <a href="#home" class="menu-icon">
+          <img src="img/logo-R.svg" alt="menu-icon" />
+        </a>
+        <img class="menu-icon" src="img/icon/menu-icon.svg" alt="menu-icon" />
+      </div>
       <div class="wrapper">
         <div
           id="drawer"
           class="drawer drawer__close d-flex justify-space-between alignItems-center"
         >
           <span class="logo-box" href="/">
-            <img class="site-logo" src="img/logo-R.svg" alt="site-logo" />
+            <a href="/">
+              <img class="site-logo" src="img/logo-R.svg" alt="site-logo" />
+            </a>
             <img
               id="close-icon"
               class="close-icon"
@@ -58,11 +54,22 @@
             graphic design & ui/ux design.
           </h3>
           <div class="button-group">
-            <a href="#" class="btn btn__contained m-right-30">Let's talk</a>
-            <button href="#" class="btn btn__outlined">
+            <a href="#contact" class="btn btn__contained m-right-30"
+              >Let's talk</a
+            >
+            <!-- <a
+              href="/resume.pdf"
+              target="__blank"
+              rel="noopener noreferrer"
+              class="btn btn__outlined"
+            >
               <img src="img/icon/download.svg" alt="download-resume" />
               Resume
-            </button>
+            </a> -->
+            <a href="#" class="btn btn__outlined">
+              <img src="img/icon/download.svg" alt="download-resume" />
+              Resume
+            </a>
           </div>
         </div>
       </section>
@@ -237,7 +244,14 @@
         <h3 class="section__title text-tr-none h4 text-white m-b-30">
           Have project in mind?
         </h3>
-        <a class="btn btn__contained bg-dark mx-auto"> Hire me</a>
+        <a
+          href="mailto:ruhulaminmolla2013@gmail.com"
+          target="__blank"
+          rel="noopener noreferrer"
+          class="btn btn__contained bg-dark mx-auto"
+        >
+          Hire me</a
+        >
       </section>
     </main>
     <footer id="contact" class="contact bg-secondary">

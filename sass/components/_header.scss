@@ -4,28 +4,30 @@ header component
 
 .header {
   width: 100%;
-  background-color: rgba($color: $secondary, $alpha: 1);
   position: relative;
   z-index: 9999;
+
   @include respond(desk) {
     position: fixed;
   }
-  .m-logo {
-    left: 10px !important;
-  }
 
-  .menu-icon {
-    width: 40px;
-    height: 40px;
+  .menu {
+    width: 100%;
+    padding: 12px;
     position: fixed;
-    right: 10px;
-    top: 10px;
-
-    transition: all 0.35s;
+    left: 0;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    transition: all 0.75s;
 
     @include respond(desk) {
       display: none;
-      position: relative;
+    }
+
+    &--dark {
+      background-color: rgba($color: $secondary, $alpha: 1);
     }
 
     &__show {
@@ -33,6 +35,11 @@ header component
     }
     &__hide {
       visibility: hidden;
+    }
+
+    .menu-icon {
+      width: 40px;
+      height: 40px;
     }
   }
 

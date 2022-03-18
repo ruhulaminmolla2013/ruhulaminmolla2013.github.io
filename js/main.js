@@ -12,7 +12,7 @@ const closeIcon = document.getElementById("close-icon");
 
 menuIcon.addEventListener("click", openDrawer);
 closeIcon.addEventListener("click", closeDrawer);
-nav.addEventListener("click", closeDrawer);
+// nav.addEventListener("click", closeDrawer);
 
 function openDrawer() {
   console.log("open drawer");
@@ -29,19 +29,29 @@ function closeDrawer() {
   menuIcon.classList.remove("menu-icon__hide");
   menuIcon.classList.add("menu-icon__show");
 }
+/*** change header bg on page scroll** */
+const menu = document.getElementById("menu");
+window.onscroll = function () {
+  let top = window.scrollY;
+  if (top > 200) {
+    menu.classList.add("menu--dark");
+  } else {
+    menu.classList.remove("menu--dark");
+  }
+};
 
-// /** active class to nav bar*** */
-// // Get the container element
-// var btnContainer = document.getElementById("nav");
+/** active class to nav bar*** */
+// Get the container element
+var btnContainer = document.getElementById("nav");
 
-// // Get all buttons with class="btn" inside the container
-// var btns = btnContainer.getElementsByClassName("navItem");
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("navItem");
 
-// // Loop through the buttons and add the active class to the current/clicked button
-// for (var i = 0; i < btns.length; i++) {
-//   btns[i].addEventListener("click", function () {
-//     var current = document.getElementsByClassName("active");
-//     current[0].className = current[0].className.replace(" active", "");
-//     this.className += " active";
-//   });
-// }
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function () {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
